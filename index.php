@@ -1,48 +1,17 @@
 <?php
 /**
- * October - The PHP platform that gets back to basics.
+ * Front to the WordPress application. This file doesn't do anything, but loads
+ * wp-blog-header.php which does and tells WordPress to load the theme.
  *
- * @package  October
- * @author   Alexey Bobkov, Samuel Georges
+ * @package WordPress
  */
 
-/*
-|--------------------------------------------------------------------------
-| Register composer
-|--------------------------------------------------------------------------
-|
-| Composer provides a generated class loader for the application.
-|
-*/
+/**
+ * Tells WordPress to load the WordPress theme and output it.
+ *
+ * @var bool
+ */
+define('WP_USE_THEMES', true);
 
-require __DIR__.'/bootstrap/autoload.php';
-
-/*
-|--------------------------------------------------------------------------
-| Load framework
-|--------------------------------------------------------------------------
-|
-| This bootstraps the framework and loads up this application.
-|
-*/
-
-$app = require_once __DIR__.'/bootstrap/app.php';
-
-/*
-|--------------------------------------------------------------------------
-| Process request
-|--------------------------------------------------------------------------
-|
-| Execute the request and send the response back to the client.
-|
-*/
-
-$kernel = $app->make('Illuminate\Contracts\Http\Kernel');
-
-$response = $kernel->handle(
-    $request = Illuminate\Http\Request::capture()
-);
-
-$response->send();
-
-$kernel->terminate($request, $response);
+/** Loads the WordPress Environment and Template */
+require( dirname( __FILE__ ) . '/wp-blog-header.php' );
