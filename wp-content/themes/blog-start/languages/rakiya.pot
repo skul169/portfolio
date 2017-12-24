@@ -1,0 +1,357 @@
+# Copyright (C) 2016 Emil Kalibradov	
+# This file is distributed under the GNU General Public License v2.0 or later.
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Blog Start\n"
+"Report-Msgid-Bugs-To: http://wordpress.org/tags/blog-start\n"
+"POT-Creation-Date: 2016-01-12 18:34+0200\n"
+"PO-Revision-Date: 2016-01-10 21:14+0200\n"
+"Last-Translator: \n"
+"Language-Team: SiteHolic <emil@siteholic.com>\n"
+"Language: en\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.8.6\n"
+"X-Poedit-Basepath: ..\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-KeywordsList: __;_e;esc_attr_e;esc_html_e;esc_html__\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: comment/comment.php:8 comment/ping.php:5
+#, php-format
+msgid "%s ago"
+msgstr ""
+
+#: comment/comment.php:9 comment/ping.php:6 content/link.php:38
+#: content/quote.php:28 content/status.php:46
+msgid "Permalink"
+msgstr ""
+
+#: content/aside.php:25 content/audio.php:27 content/chat.php:33
+#: content/gallery.php:25 content/image.php:27 content/link.php:25
+#: content/quote.php:15 content/status.php:23 content/video.php:27
+#, php-format
+msgid "Posted in %s"
+msgstr ""
+
+#: content/aside.php:26 content/audio.php:28 content/chat.php:34
+#: content/gallery.php:26 content/image.php:28 content/link.php:26
+#: content/quote.php:16 content/status.php:24 content/video.php:28
+#, php-format
+msgid "Tagged %s"
+msgstr ""
+
+#: content/attachment-audio.php:27
+msgid "Audio Info"
+msgstr ""
+
+#: content/attachment-audio.php:31 content/attachment-video.php:31
+msgid "Run Time"
+msgstr ""
+
+#: content/attachment-audio.php:32
+msgid "Artist"
+msgstr ""
+
+#: content/attachment-audio.php:33
+msgid "Composer"
+msgstr ""
+
+#: content/attachment-audio.php:34
+msgid "Album"
+msgstr ""
+
+#: content/attachment-audio.php:35
+msgid "Track"
+msgstr ""
+
+#: content/attachment-audio.php:36
+msgid "Year"
+msgstr ""
+
+#: content/attachment-audio.php:37
+msgid "Genre"
+msgstr ""
+
+#: content/attachment-audio.php:38 content/attachment-image.php:70
+#: content/attachment-video.php:33
+msgid "Type"
+msgstr ""
+
+#: content/attachment-audio.php:39 content/attachment-image.php:71
+#: content/attachment-video.php:34
+msgid "Name"
+msgstr ""
+
+#: content/attachment-audio.php:40 content/attachment-video.php:35
+msgid "Size"
+msgstr ""
+
+#: content/attachment-audio.php:41 content/attachment-image.php:72
+#: content/attachment-video.php:36
+msgid "Mime Type"
+msgstr ""
+
+#: content/attachment-image.php:22
+#, php-format
+msgid "Sizes: %s"
+msgstr ""
+
+#: content/attachment-image.php:59
+msgid "Image Info"
+msgstr ""
+
+#: content/attachment-image.php:63 content/attachment-video.php:32
+msgid "Dimensions"
+msgstr ""
+
+#: content/attachment-image.php:64
+msgid "Date"
+msgstr ""
+
+#: content/attachment-image.php:65
+msgid "Camera"
+msgstr ""
+
+#: content/attachment-image.php:66
+msgid "Aperture"
+msgstr ""
+
+#: content/attachment-image.php:67
+msgid "Focal Length"
+msgstr ""
+
+#: content/attachment-image.php:67
+#, php-format
+msgid "%s mm"
+msgstr ""
+
+#: content/attachment-image.php:68
+msgid "ISO"
+msgstr ""
+
+#: content/attachment-image.php:69
+msgid "Shutter Speed"
+msgstr ""
+
+#: content/attachment-image.php:69
+#, php-format
+msgid "%s sec"
+msgstr ""
+
+#: content/attachment-image.php:82
+msgid "Gallery"
+msgstr ""
+
+#: content/attachment-video.php:27
+msgid "Video Info"
+msgstr ""
+
+#: content/content.php:24 content/content.php:47
+msgid "by"
+msgstr ""
+
+#: content/content.php:28
+#, php-format
+msgid "Tagged:\t %s"
+msgstr ""
+
+#: content/error.php:4
+msgid "Nothing found"
+msgstr ""
+
+#: content/error.php:8
+msgid "Apologies, but no entries were found."
+msgstr ""
+
+#: footer.php:15
+#, php-format
+msgid "Copyright &#169; %1$s %2$s. Powered by %3$s and %4$s."
+msgstr ""
+
+#: header.php:51
+msgid "Skip to content"
+msgstr ""
+
+#: inc/theme.php:54
+msgid "1 Column"
+msgstr ""
+
+#: inc/theme.php:55
+msgid "2 Columns: Content / Sidebar"
+msgstr ""
+
+#: inc/theme.php:56
+msgid "2 Columns: Sidebar / Content"
+msgstr ""
+
+#: inc/theme.php:72
+msgid "Primary sidebar, displayed  on left or right"
+msgstr ""
+
+#: inc/theme.php:80
+msgid "This is the header widget area"
+msgstr ""
+
+#: library/admin/meta-box-post-layout.php:35
+#: library/inc/functions-customize.php:74
+msgid "Layout"
+msgstr ""
+
+#: library/admin/meta-box-post-style.php:35
+msgid "Style"
+msgstr ""
+
+#: library/admin/meta-box-post-template.php:41
+msgid "Template"
+msgstr ""
+
+#: library/ext/breadcrumb-trail.php:244
+msgid "Browse:"
+msgstr ""
+
+#: library/ext/breadcrumb-trail.php:246
+msgid "Home"
+msgstr ""
+
+#: library/ext/breadcrumb-trail.php:247 library/inc/template-general.php:422
+msgid "404 Not Found"
+msgstr ""
+
+#: library/ext/breadcrumb-trail.php:248 library/inc/template-general.php:218
+msgid "Archives"
+msgstr ""
+
+#: library/ext/breadcrumb-trail.php:250 library/inc/template-general.php:400
+#, php-format
+msgid "Search results for &#8220;%s&#8221;"
+msgstr ""
+
+#: library/ext/breadcrumb-trail.php:252
+#, php-format
+msgid "Page %s"
+msgstr ""
+
+#: library/ext/breadcrumb-trail.php:254 library/inc/template-general.php:354
+#, php-format
+msgid "Minute %s"
+msgstr ""
+
+#: library/ext/breadcrumb-trail.php:256
+#, php-format
+msgid "Week %s"
+msgstr ""
+
+#: library/inc/class-media-meta.php:245 library/inc/template-media.php:172
+#, php-format
+msgid "%1$s &#215; %2$s"
+msgstr ""
+
+#: library/inc/functions-customize.php:97
+msgid "Global Layout"
+msgstr ""
+
+#: library/inc/functions-customize.php:116
+msgid "Top Bar Color"
+msgstr ""
+
+#: library/inc/functions-customize.php:138
+msgid "Main Color"
+msgstr ""
+
+#: library/inc/functions-customize.php:142
+msgid "Color for links, widget headings"
+msgstr ""
+
+#: library/inc/functions-customize.php:161
+msgid "Second Color"
+msgstr ""
+
+#: library/inc/functions-customize.php:165
+msgid "Color for link hover, category name"
+msgstr ""
+
+#: library/inc/functions-customize.php:184
+msgid "Third Color"
+msgstr ""
+
+#: library/inc/functions-customize.php:188
+msgid "Color for slogan, footer, sidebar text"
+msgstr ""
+
+#: library/inc/functions-customize.php:196
+msgid "Theme Settings"
+msgstr ""
+
+#: library/inc/functions-customize.php:208
+msgid "Social Networks"
+msgstr ""
+
+#: library/inc/functions-customize.php:209
+msgid "Social Networks links"
+msgstr ""
+
+#: library/inc/functions-head.php:140
+#, php-format
+msgid "%1$s Page %2$s"
+msgstr ""
+
+#: library/inc/functions-utility.php:94
+msgid "(Untitled)"
+msgstr ""
+
+#: library/inc/template-general.php:55
+msgid "http://wordpress.org"
+msgstr ""
+
+#: library/inc/template-general.php:55
+msgid "WordPress"
+msgstr ""
+
+#: library/inc/template-general.php:286
+#, php-format
+msgid "Week %1$s of %2$s"
+msgstr ""
+
+#: menu/breadcrumbs.php:10
+msgid "You are here:"
+msgstr ""
+
+#: misc/comments-error.php:6
+#, php-format
+msgid "Comments are closed, but %strackbacks%s and pingbacks are open."
+msgstr ""
+
+#: misc/comments-error.php:13
+msgid "Comments are closed."
+msgstr ""
+
+#: misc/comments-nav.php:5
+msgid "Comments Navigation"
+msgstr ""
+
+#: misc/comments-nav.php:11
+#, php-format
+msgid "Page %1$s of %2$s"
+msgstr ""
+
+#: misc/loop-nav.php:4
+msgid "Previous Post: %link"
+msgstr ""
+
+#: misc/loop-nav.php:5
+msgid "Next Post: %link"
+msgstr ""
+
+#: sidebar/primary.php:14
+msgid "Example Widget"
+msgstr ""
+
+#: sidebar/primary.php:16
+#, php-format
+msgid ""
+"This is an example widget to show how the Primary sidebar looks by default. "
+"You can add custom widgets from the %swidgets screen%s in the admin."
+msgstr ""
