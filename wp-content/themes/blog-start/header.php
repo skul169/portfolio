@@ -3,6 +3,7 @@
 
 <head <?php hybrid_attr( 'head' ); ?>>
 <?php wp_head(); // Hook required for scripts, styles, and other <head> items. ?>
+<link rel="alternate" href="https://truong.tech" hreflang="vi-vn">
 </head>
 
 <body <?php hybrid_attr( 'body' ); ?>>
