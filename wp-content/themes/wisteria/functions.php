@@ -79,6 +79,9 @@ function wisteria_setup() {
 		'default-image' => '',
 	) ) );
 
+	// Add theme support for selective refresh for widgets.
+	add_theme_support( 'customize-selective-refresh-widgets' );
+
 }
 endif; // wisteria_setup
 add_action( 'after_setup_theme', 'wisteria_setup' );
@@ -155,7 +158,7 @@ function wisteria_scripts() {
 	wp_enqueue_style( 'wisteria-bootstrap-custom', get_template_directory_uri() . '/css/bootstrap-custom.css' );
 
 	// Fontawesome
-	wp_enqueue_style( 'font-awesome', get_template_directory_uri() . '/css/font-awesome.css' );
+	wp_enqueue_style( 'font-awesome', get_template_directory_uri() . '/css/fontawesome-all.css' );
 
 	// Fonts
 	wp_enqueue_style( 'wisteria-fonts', wisteria_fonts_url(), array(), null );

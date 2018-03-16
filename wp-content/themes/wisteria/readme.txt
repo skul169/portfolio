@@ -1,7 +1,7 @@
 === Wisteria ===
 Contributors: WPFriendship.com
 Requires at least: WordPress 4.7
-Tested up to: WordPress 4.9.1
+Tested up to: WordPress 4.9.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: two-columns, left-sidebar, right-sidebar, custom-background, custom-colors, custom-header, custom-menu, editor-style, featured-images, flexible-header, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready, blog, news
@@ -51,10 +51,9 @@ Please see the file headers for more information.
 
 = FONTS =
 
-Font Awesome v4.7.0
-Copyright: Dave Gandy, https://twitter.com/davegandy
-License: http://fontawesome.io/license (Font: SIL OFL 1.1, CSS: MIT License)
-Source: http://fontawesome.io - @fontawesome
+Font Awesome Free 5.0.7 by @fontawesome
+License: https://fontawesome.com/license (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License)
+Source: https://fontawesome.com/
 
 = CSS =
 
@@ -97,6 +96,17 @@ Source: https://unsplash.com/
 - https://unsplash.com/photos/E84EfgqHrBk
 
 == Changelog ==
+
+= 1.1.2 =
+Released: March 4, 2018
+
+* Font Awesome library updated to 5.0.7 version.
+
+= 1.1.1 =
+Released: January 15, 2018
+
+* Code improvements.
+* CSS tweaks.
 
 = 1.1.0 =
 Released: December 5, 2017

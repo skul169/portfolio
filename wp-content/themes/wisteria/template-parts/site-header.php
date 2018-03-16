@@ -12,12 +12,7 @@
 
 				<div class="site-header-inside-wrapper">
 					<div class="site-branding-wrapper">
-						<?php
-						// Site Custom Logo
-						if ( function_exists( 'the_custom_logo' ) ) {
-							the_custom_logo();
-						}
-						?>
+						<?php the_custom_logo(); ?>
 
 						<div class="site-branding">
 							<?php if ( is_front_page() && is_home() ) : ?>

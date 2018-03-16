@@ -4,7 +4,7 @@ Theme URI: https://wpfriendship.com/wisteria/
 Author: Wisteria
 Author URI: https://wpfriendship.com/
 Description: Wisteria is a clean, charming, modern blog and magazine WordPress theme. It has a creative, responsive layout having clean, simple and content focused design with straightforward functionality. Wisteria is a perfect solution for sharing your valuable content and creativity with the world. Wisteria is a minimal, versatile, easy to use, multipurpose, sophisticated WordPress theme designed for freelancers, creatives, photographers, writers, authors and bloggers. Wisteria is fully optimized for business, agency, personal, corporate, marketing, fashion, portfolio, photography, financial, fitness, food, event, restaurant, ecommerce, video, services, seo, gym, fitness, blog or any other type of niche. Wisteria is built on a clean HTML5 and CSS3 code.
-Version: 1.1.0
+Version: 1.1.2
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: wisteria
@@ -331,21 +331,15 @@ optgroup {
 .post-label:before,
 .more-link:before,
 .search-submit:before {
-  display: inline-block;
-  font-family: "FontAwesome";
-  font-size: 14px;
-  font-size: 0.875rem;
-  font-style: normal;
-  font-weight: normal;
-  font-variant: normal;
-  line-height: 1;
-  speak: none;
-  text-align: center;
-  text-decoration: inherit;
-  text-rendering: auto;
-  text-transform: none;
-  -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  display: inline-block;
+  font-family: 'Font Awesome 5 Free';
+  font-weight: 900;
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  line-height: 1;
 }
 
 /*--------------------------------------------------------------
@@ -1869,30 +1863,6 @@ body.has-responsive-menu {
   position: relative;
 }
 
-.has-sticky-sidebar .site-footer {
-  z-index: 2;
-}
-
-/* Site Footer Widgets */
-.site-footer-widgets {
-  background: #f2f2f2;
-  padding: 15px 0;
-  padding: 0.9375rem 0;
-  position: relative;
-}
-
-/* Site Footer Sidebar */
-.footer-sidebar {
-  margin: 0;
-  padding: 0;
-}
-
-.footer-sidebar-second,
-.footer-sidebar-third {
-  margin: 15px 0 0;
-  margin: 0.9375rem 0 0;
-}
-
 /* Site info */
 .site-info {
   background: #020202;
@@ -2308,7 +2278,7 @@ body.has-responsive-menu {
 
 .entry-meta .post-first-category a:before {
   color: #9b59b6;
-  content: "\f114";
+  content: "\f07b";
   font-size: 12px;
   font-size: 0.75rem;
   margin: 0 5px 0 0;
@@ -2335,7 +2305,7 @@ body.has-responsive-menu {
 
 .entry-meta .post-edit-link-meta a:before {
   color: #9b59b6;
-  content: "\f040";
+  content: "\f044";
   font-size: 12px;
   font-size: 0.75rem;
   margin: 0 5px 0 0;
@@ -3511,7 +3481,7 @@ img[id*="botd"] {
     z-index: 200;
   }
   .sf-menu > li > ul {
-    top: 38px;
+    top: 40px;
     left: -19px;
   }
   .sf-menu > li {
