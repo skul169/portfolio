@@ -5,7 +5,7 @@
 */
 function ampforwp_framework_get_related_posts($argsdata=array()){
  	global $post,  $redux_builder_amp;
-	do_action('ampforwp_above_related_post'); //Above Related Posts
+ 	$show_image = (isset($argsdata['show_image']) ? $argsdata['show_image'] : true);
 	$string_number_of_related_posts = $redux_builder_amp['ampforwp-number-of-related-posts'];
 	$int_number_of_related_posts = round(abs(floatval($string_number_of_related_posts)));
 	$my_query = related_post_loop_query();
@@ -21,7 +21,14 @@ function ampforwp_framework_get_related_posts($argsdata=array()){
 					<li class="<?php if ( has_post_thumbnail() ) { echo'has_thumbnail'; } else { echo 'no_thumbnail'; } ?>">
 			            <?php
 			            $related_post_permalink = ampforwp_url_controller( get_permalink() );
-			            ampforwp_get_relatedpost_image('thumbnail');
+			            if ( $show_image ) {
+				            if ( isset($argsdata['image_size']) && '' != $argsdata['image_size'] ) {
+				            	ampforwp_get_relatedpost_image($argsdata['image_size']);
+				            }
+				            else {
+				            	ampforwp_get_relatedpost_image('thumbnail');
+				            }
+				        }
 			            ampforwp_get_relatedpost_content($argsdata);
 			            ?> 
 			        </li><?php
@@ -72,27 +79,43 @@ function related_post_loop_query(){
 									);
 				}
 		}
+		if ( true == $redux_builder_amp['ampforwp-single-related-posts-image'] ) {
+
+		}
 		$my_query = new wp_query( $args );
 		return $my_query;
 }
 
 function ampforwp_related_post(){ 
 	global $redux_builder_amp;
+	do_action('ampforwp_above_related_post'); //Above Related Posts
 	?>
    <h3 class="amp-related-posts-title"><?php echo ampforwp_translation( $redux_builder_amp['amp-translator-related-text'], 'Related Post' ); ?></h3>
 <?php } 
 
 
-function ampforwp_get_relatedpost_image( $imagetype ='thumbnail'){
+function ampforwp_get_relatedpost_image( $imagetype ='thumbnail', $data=array() ){
 	$related_post_permalink = ampforwp_url_controller( get_permalink() );
+	$show_image = (isset($data['show_image']) ? $data['show_image'] : true);
 	?>
 	<a href="<?php echo esc_url( $related_post_permalink ); ?>" rel="bookmark" title="<?php the_title_attribute(); ?>">
 	    <?php
 	        $thumb_id_2 = get_post_thumbnail_id();
 	        $thumb_url_array_2 = wp_get_attachment_image_src($thumb_id_2, $imagetype, true);
+	        if(isset($data['image_crop']) && $data['image_crop'] != ""){
+				$width 	= $data['image_crop_width'];
+				if(empty($width)){
+					$width = $thumb_url_array_2[1];
+				}
+				$height = $data['image_crop_height'];
+				if(empty($height)){
+					$height = $thumb_url_array_2[2];
+				}
+				$thumb_url_array_2 = ampforwp_aq_resize( $thumb_url_array_2[0], $width, $height, true, false ); //resize & crop the image
+			}
 	        $thumb_url_2 = $thumb_url_array_2[0];
 	    
-	     if ( has_post_thumbnail() ) { ?>
+	     if ( has_post_thumbnail() && $show_image ) { ?>
 	    	<amp-img src="<?php echo esc_url( $thumb_url_2 ); ?>" width="<?php echo $thumb_url_array_2[1]; ?>" height="<?php echo $thumb_url_array_2[2]; ?>" layout="responsive"></amp-img>
 		<?php } ?>
 	    </a>

@@ -1,8 +1,8 @@
 <?php
-function ampforwp_framework_get_logo(){ 
+function ampforwp_framework_get_logo(){
   global $redux_builder_amp; ?>
 <div class="amp-logo">
-  <?php 
+  <?php
         do_action('amp_header_top');
         $set_rel_to_noamp=false;
 
@@ -11,11 +11,12 @@ function ampforwp_framework_get_logo(){
                   $ampforwp_home_url = trailingslashit( get_bloginfo('url') ).'?nonamp=1';
                   $set_rel_to_noamp = true;
                   } else {
-                    $ampforwp_home_url = trailingslashit( get_bloginfo('url') );
+                    $ampforwp_home_url = ampforwp_url_controller( get_bloginfo('url') );
                  }
         } else {
                  if($redux_builder_amp['ampforwp-homepage-on-off-support']) {
-                    $ampforwp_home_url = user_trailingslashit( trailingslashit( get_bloginfo('url') ) . AMPFORWP_AMP_QUERY_VAR );
+                    $ampforwp_home_url = ampforwp_url_controller( get_bloginfo('url') );
+                    //$ampforwp_home_url = user_trailingslashit( trailingslashit( get_bloginfo('url') ) . AMPFORWP_AMP_QUERY_VAR );
                  } else {
                         if( $redux_builder_amp['amp-mobile-redirection'] ) {
                           $ampforwp_home_url = trailingslashit( get_bloginfo('url') ).'?nonamp=1';
@@ -27,7 +28,6 @@ function ampforwp_framework_get_logo(){
           }?>
 
         <?php if ( true == ($redux_builder_amp['opt-media']['url']) ) {
-        $logo_id =  attachment_url_to_postid($redux_builder_amp['opt-media'] ['url']);
           $alt = ampforwp_default_logo('alt')  ?>
           <a href="<?php echo esc_url( $ampforwp_home_url ); ?>"  <?php if($set_rel_to_noamp){ echo ' rel="nofollow"'; } ?>  >
 
@@ -39,3 +39,20 @@ function ampforwp_framework_get_logo(){
         <?php } ?>
  </div>
  <?php }
+
+add_action('amp_post_template_css','amp_framework_logo_styles',11); 
+if( !function_exists( 'amp_framework_logo_styles' ) ){
+ function amp_framework_logo_styles(){
+  global $redux_builder_amp;
+  $max_width = '190px';
+   $width =  (integer) ampforwp_default_logo('width');
+  if ( true == $redux_builder_amp['ampforwp-custom-logo-dimensions-options'] && isset($redux_builder_amp['ampforwp-custom-logo-dimensions-options']) && 'flexible' == $redux_builder_amp['ampforwp-custom-logo-dimensions-options'] ) {
+       $max_width =  (integer) $redux_builder_amp['ampforwp-custom-logo-dimensions-slider'];
+       $width =  (integer) ampforwp_default_logo('width');
+       $max_width = ceil(($width*$max_width)/100)."px";
+  }
+   $width .= 'px';
+   ?>
+    .amp-logo amp-img{width:<?php echo $max_width; ?>}
+ <?php }
+}

@@ -1,0 +1,437 @@
+#, fuzzy
+msgid ""
+msgstr ""
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+"Project-Id-Version: Resume Builder\n"
+"POT-Creation-Date: 2018-01-27 16:09-0500\n"
+"PO-Revision-Date: 2018-01-19 15:22-0500\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.0.6\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-Flags-xgettext: --add-comments=translators:\n"
+"X-Poedit-WPHeader: resume-builder.php\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
+"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;"
+"_n_noop:1,2;_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.js\n"
+
+#: includes/class.resume-builder-admin-enqueues.php:65
+msgid "Add Image"
+msgstr ""
+
+#: includes/class.resume-builder-admin-enqueues.php:66
+msgid "Use this Image"
+msgstr ""
+
+#: includes/class.resume-builder-admin-enqueues.php:67
+msgid "Edit"
+msgstr ""
+
+#: includes/class.resume-builder-admin-enqueues.php:68
+msgid "Close"
+msgstr ""
+
+#: includes/class.resume-builder-admin-enqueues.php:69
+msgid "No intervals set."
+msgstr ""
+
+#: includes/class.resume-builder-admin-enqueues.php:70
+msgid ""
+"Are you sure you want to replace all of your resume content with this "
+"template? This will remove any additional text you may have in the Recipe "
+"Layout."
+msgstr ""
+
+#: includes/class.resume-builder-admin-menus.php:30
+#: includes/class.resume-builder-post-types.php:72
+#: includes/class.resume-builder-post-types.php:74
+#: includes/class.resume-builder-post-types.php:86
+msgid "Resumes"
+msgstr ""
+
+#: includes/class.resume-builder-admin-menus.php:31
+#: includes/class.resume-builder-post-types.php:76
+msgid "Add New"
+msgstr ""
+
+#: includes/class.resume-builder-admin-menus.php:32
+#: templates/admin/welcome.php:5
+msgid "Settings"
+msgstr ""
+
+#: includes/class.resume-builder-admin-menus.php:33
+msgid "What's New?"
+msgstr ""
+
+#: includes/class.resume-builder-admin-menus.php:40
+#: includes/class.resume-builder-admin-menus.php:48
+msgid "You do not have sufficient permissions to access this page."
+msgstr ""
+
+#: includes/class.resume-builder-functions.php:20
+#: includes/class.resume-builder-functions.php:23
+msgid "New"
+msgstr ""
+
+#: includes/class.resume-builder-functions.php:21
+#: includes/class.resume-builder-functions.php:24
+msgid "Tweak"
+msgstr ""
+
+#: includes/class.resume-builder-functions.php:22
+#: includes/class.resume-builder-functions.php:25
+msgid "Fixed"
+msgstr ""
+
+#: includes/class.resume-builder-functions.php:34
+msgid "What's new?"
+msgstr ""
+
+#. Plugin Name of the plugin/theme
+#: includes/class.resume-builder-meta.php:80
+msgid "Resume Builder"
+msgstr ""
+
+#: includes/class.resume-builder-meta.php:162
+msgid "Shortcodes"
+msgstr ""
+
+#: includes/class.resume-builder-meta.php:176 includes/widgets/resume.php:64
+msgid "Full Resume"
+msgstr ""
+
+#: includes/class.resume-builder-meta.php:177
+msgid "Display the resume in its entirety."
+msgstr ""
+
+#: includes/class.resume-builder-meta.php:183 includes/widgets/resume.php:65
+msgid "Introduction"
+msgstr ""
+
+#: includes/class.resume-builder-meta.php:184
+msgid "Display just the introduction."
+msgstr ""
+
+#: includes/class.resume-builder-meta.php:190 includes/widgets/resume.php:66
+msgid "Contact Information"
+msgstr ""
+
+#: includes/class.resume-builder-meta.php:191
+msgid "Display just the contact information."
+msgstr ""
+
+#: includes/class.resume-builder-meta.php:197
+msgid "Experience & Education"
+msgstr ""
+
+#: includes/class.resume-builder-meta.php:198
+msgid "Display just the experience & education content."
+msgstr ""
+
+#: includes/class.resume-builder-meta.php:204
+#: includes/class.resume-builder-meta.php:255
+#: includes/class.resume-builder-meta.php:752 includes/widgets/resume.php:68
+msgid "Skills"
+msgstr ""
+
+#: includes/class.resume-builder-meta.php:205
+msgid "Display just the skills content."
+msgstr ""
+
+#: includes/class.resume-builder-meta.php:243
+msgid "Information"
+msgstr ""
+
+#: includes/class.resume-builder-meta.php:249
+msgid "Experience, Education, Etc."
+msgstr ""
+
+#: includes/class.resume-builder-meta.php:304
+msgid "Tagline"
+msgstr ""
+
+#: includes/class.resume-builder-meta.php:305
+msgid "Displays under this person's name."
+msgstr ""
+
+#: includes/class.resume-builder-meta.php:305
+msgid "(optional)"
+msgstr ""
+
+#: includes/class.resume-builder-meta.php:306
+msgid "ex. Designer, Developer, etc."
+msgstr ""
+
+#: includes/class.resume-builder-meta.php:310
+msgid "Overview"
+msgstr ""
+
+#: includes/class.resume-builder-meta.php:318
+msgid "Email"
+msgstr ""
+
+#: includes/class.resume-builder-meta.php:323
+msgid "Phone"
+msgstr ""
+
+#: includes/class.resume-builder-meta.php:324
+msgid "(123) 456-7890"
+msgstr ""
+
+#: includes/class.resume-builder-meta.php:328
+msgid "Website"
+msgstr ""
+
+#: includes/class.resume-builder-meta.php:329
+msgid "http://"
+msgstr ""
+
+#: includes/class.resume-builder-meta.php:333
+msgid "Address"
+msgstr ""
+
+#: includes/class.resume-builder-meta.php:428
+msgid "Details Block"
+msgstr ""
+
+#: includes/class.resume-builder-meta.php:433
+#: includes/class.resume-builder-meta.php:508
+#: includes/class.resume-builder-meta.php:556
+msgid "2010–2014"
+msgstr ""
+
+#: includes/class.resume-builder-meta.php:439
+#: includes/class.resume-builder-meta.php:514
+#: includes/class.resume-builder-meta.php:562
+msgid "Company / School"
+msgstr ""
+
+#: includes/class.resume-builder-meta.php:445
+#: includes/class.resume-builder-meta.php:520
+#: includes/class.resume-builder-meta.php:568
+msgid "Job Title / Degree"
+msgstr ""
+
+#: includes/class.resume-builder-meta.php:466
+msgid "ex. Education, Experience, etc."
+msgstr ""
+
+#: includes/class.resume-builder-meta.php:475
+msgid "Text Block"
+msgstr ""
+
+#: includes/class.resume-builder-meta.php:494
+#: includes/class.resume-builder-meta.php:585
+msgid "Education, Experience, etc."
+msgstr ""
+
+#: includes/class.resume-builder-meta.php:543
+msgid "Add Details"
+msgstr ""
+
+#: includes/class.resume-builder-meta.php:544
+#: includes/class.resume-builder-meta.php:800
+msgid "Add Heading"
+msgstr ""
+
+#: includes/class.resume-builder-meta.php:545
+msgid "Add Text"
+msgstr ""
+
+#: includes/class.resume-builder-meta.php:574
+#: includes/class.resume-builder-meta.php:722
+#: includes/class.resume-builder-meta.php:783
+#: includes/class.resume-builder-meta.php:828
+msgid "Description"
+msgstr ""
+
+#: includes/class.resume-builder-meta.php:592
+msgid "Content"
+msgstr ""
+
+#: includes/class.resume-builder-meta.php:705
+#: includes/class.resume-builder-meta.php:766
+#: includes/class.resume-builder-meta.php:811
+msgid "Skill title"
+msgstr ""
+
+#: includes/class.resume-builder-meta.php:799
+msgid "Add Skill"
+msgstr ""
+
+#: includes/class.resume-builder-post-types.php:73
+#: includes/class.resume-builder-post-types.php:75
+msgid "Resume"
+msgstr ""
+
+#: includes/class.resume-builder-post-types.php:77
+msgid "Add New Resume"
+msgstr ""
+
+#: includes/class.resume-builder-post-types.php:78
+msgid "New Resume"
+msgstr ""
+
+#: includes/class.resume-builder-post-types.php:79
+msgid "Edit Resume"
+msgstr ""
+
+#: includes/class.resume-builder-post-types.php:80
+msgid "View Resume"
+msgstr ""
+
+#: includes/class.resume-builder-post-types.php:81
+msgid "All Resumes"
+msgstr ""
+
+#: includes/class.resume-builder-post-types.php:82
+msgid "Search Resumes"
+msgstr ""
+
+#: includes/class.resume-builder-post-types.php:83
+msgid "No Resumes found."
+msgstr ""
+
+#: includes/class.resume-builder-post-types.php:84
+msgid "No Resumes found in Trash."
+msgstr ""
+
+#: includes/class.resume-builder-post-types.php:107
+msgid "Name ..."
+msgstr ""
+
+#: includes/class.resume-builder-settings.php:84
+msgid "General"
+msgstr ""
+
+#: includes/class.resume-builder-settings.php:88
+msgid "Tiny Fonts Fix"
+msgstr ""
+
+#: includes/class.resume-builder-settings.php:89
+msgid "Does your resume have tiny fonts? Check this to fix it."
+msgstr ""
+
+#: includes/class.resume-builder-settings.php:93
+msgid "Fix \"Tiny Fonts\""
+msgstr ""
+
+#: includes/class.resume-builder-settings.php:99
+msgid "Colors"
+msgstr ""
+
+#: includes/class.resume-builder-settings.php:103
+msgid "Headings"
+msgstr ""
+
+#: includes/class.resume-builder-settings.php:104
+msgid "Choose a color for your resume headings."
+msgstr ""
+
+#: includes/class.resume-builder-settings.php:110
+msgid "Stars"
+msgstr ""
+
+#: includes/class.resume-builder-settings.php:111
+msgid "Choose a color for your \"Skills\" stars."
+msgstr ""
+
+#: includes/class.resume-builder-shortcodes.php:58
+msgid "(resume not found)"
+msgstr ""
+
+#: includes/widgets/resume.php:37
+msgid "Title (optional):"
+msgstr ""
+
+#: includes/widgets/resume.php:49
+msgid "Resume:"
+msgstr ""
+
+#: includes/widgets/resume.php:62
+msgid "Section(s):"
+msgstr ""
+
+#: includes/widgets/resume.php:67
+msgid "Education & Experience"
+msgstr ""
+
+#: includes/widgets/resume.php:73
+msgid "Style:"
+msgstr ""
+
+#: includes/widgets/resume.php:75
+msgid "Compact"
+msgstr ""
+
+#: includes/widgets/resume.php:76
+msgid "Normal"
+msgstr ""
+
+#: templates/admin/settings.php:11
+#, php-format
+msgid "%s Settings"
+msgstr ""
+
+#: templates/admin/settings.php:98
+msgid "Update Settings"
+msgstr ""
+
+#: templates/admin/welcome.php:3
+#, php-format
+msgid "Thanks for using %s."
+msgstr ""
+
+#: templates/admin/welcome.php:5
+#, php-format
+msgid ""
+"If this is your first time using %s, head over to the %s page for some "
+"initial configuration. If you just recently updated, you can find out "
+"what's new below. Go and %s!"
+msgstr ""
+
+#: templates/admin/welcome.php:5
+msgid "create a resume"
+msgstr ""
+
+#: templates/admin/welcome.php:18
+msgid "Quick Links"
+msgstr ""
+
+#: templates/admin/welcome.php:20
+msgid "Create a Resume"
+msgstr ""
+
+#: templates/admin/welcome.php:21
+msgid "Plugin Settings"
+msgstr ""
+
+#: templates/admin/welcome.php:22
+msgid "Shortcode Examples"
+msgstr ""
+
+#: templates/admin/welcome.php:23
+msgid "Widget Examples"
+msgstr ""
+
+#. Plugin URI of the plugin/theme
+msgid "https://demos.boxystudio.com/resume-builder/"
+msgstr ""
+
+#. Description of the plugin/theme
+msgid "Create beautiful resumes with ease."
+msgstr ""
+
+#. Author of the plugin/theme
+msgid "Boxy Studio"
+msgstr ""
+
+#. Author URI of the plugin/theme
+msgid "https://boxystudio.com"
+msgstr ""

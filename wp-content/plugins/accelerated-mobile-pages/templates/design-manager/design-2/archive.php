@@ -30,6 +30,7 @@
 		}
 	}?>
 	<style amp-custom>
+	<?php $this->load_parts( array( 'style' ) ); ?>
 	<?php do_action( 'amp_post_template_css', $this ); ?>
 	</style>
 </head>
@@ -48,7 +49,7 @@
 		<?php
 			if( is_author() ){
 			$curauth = (get_query_var('author_name')) ? get_user_by('slug', get_query_var('author_name')) : get_userdata(get_query_var('author'));
-				if( true == ampforwp_comment_gravatar_checker($curauth->user_email) ){
+				if( true == ampforwp_gravatar_checker($curauth->user_email) ){
 					$curauth_url = get_avatar_url( $curauth->user_email, array('size'=>180) );
 					if($curauth_url){ ?>
 						<div class="author-archive">
@@ -106,25 +107,15 @@
 
 		<div class="amp-wp-content amp-loop-list">
 			<?php if ( ampforwp_has_post_thumbnail() ) {  
-				$thumb_url = ampforwp_get_post_thumbnail();
-				if($thumb_url){ ?>
-					<div class="home-post_image">
-						<a href="<?php echo esc_url( $ampforwp_amp_post_url ); ?>">
-							<amp-img
-								src=<?php echo esc_url($thumb_url); ?>
-								<?php ampforwp_thumbnail_alt(); ?>
-								<?php if( $redux_builder_amp['ampforwp-homepage-posts-image-modify-size'] ) { ?>
-									width=<?php global $redux_builder_amp; echo $redux_builder_amp['ampforwp-homepage-posts-design-1-2-width'] ?>
-									height=<?php global $redux_builder_amp; echo $redux_builder_amp['ampforwp-homepage-posts-design-1-2-height'] ?>
-								<?php } else { ?>
-									width=100
-									height=75
-								<?php } ?>
-							></amp-img>
-						</a>
-					</div>
-				<?php } 
-			} ?>
+				$width = 100;
+				$height = 75;
+				if ( true == $redux_builder_amp['ampforwp-homepage-posts-image-modify-size'] ) {
+					$width = $redux_builder_amp['ampforwp-homepage-posts-design-1-2-width'];
+					$height = $redux_builder_amp['ampforwp-homepage-posts-design-1-2-height'];
+				}
+				$image_args = array("tag"=>'div',"tag_class"=>'home-post_image','image_size'=>'full','image_crop'=>'true','image_crop_width'=>$width,'image_crop_height'=>$height); ?>
+						<?php amp_loop_image($image_args); ?>
+				<?php } ?>
 
 			<div class="amp-wp-post-content">
 

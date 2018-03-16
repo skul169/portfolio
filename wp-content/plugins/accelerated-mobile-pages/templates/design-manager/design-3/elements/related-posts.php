@@ -13,8 +13,7 @@
 		}
 		// Custom Post types 
        if( $current_post_type = get_post_type( $post )) {
-                // The query arguments
-       		//#1263
+            // The query arguments
        		if($current_post_type != 'page'){
                 $args = array(
                     'posts_per_page'=> $int_number_of_related_posts,
@@ -73,23 +72,28 @@
 									$related_post_permalink = "";
 									$related_post_permalink = ampforwp_url_controller( get_permalink() );?>
 									<li class="<?php if ( ampforwp_has_post_thumbnail() ) { echo'has_related_thumbnail'; } else { echo 'no_related_thumbnail'; } ?>">
+										<div class="related-post_image">
                                         <a href="<?php echo esc_url( $related_post_permalink ); ?>" rel="bookmark" title="<?php the_title_attribute(); ?>">
 									<?php if ( ampforwp_has_post_thumbnail() ) { 
 									$thumb_url = ampforwp_get_post_thumbnail();
-									if($thumb_url){?>
-						            	<amp-img src="<?php echo esc_url( $thumb_url ); ?>" width="150" height="150" layout="responsive"></amp-img>
+									$thumb_width  	= ampforwp_get_post_thumbnail('width');
+									$thumb_height 	= ampforwp_get_post_thumbnail('height');
+									if( $thumb_url && true == $redux_builder_amp['ampforwp-single-related-posts-image'] ) { ?>
+						            	<amp-img src="<?php echo esc_url( $thumb_url ); ?>" width=<?php echo $thumb_width; ?> height=<?php echo $thumb_height; ?> layout="responsive"></amp-img>
 									<?php } 
 									}?>
                               		</a>
+                              	</div>
 					                <div class="related_link">
 					                    <a href="<?php echo esc_url( $related_post_permalink ); ?>"><?php the_title(); ?></a>
-					                    <?php if(has_excerpt()){
-												$content = get_the_excerpt();
-											}else{
-												$content = get_the_content();
-											}
-											?>
-					                    <p><?php echo wp_trim_words( strip_shortcodes( $content ) , '15' ); ?></p>
+					                    <?php if ( isset($redux_builder_amp['ampforwp-single-related-posts-excerpt']) && true == $redux_builder_amp['ampforwp-single-related-posts-excerpt'] ) {
+						                     if(has_excerpt()){
+													$content = get_the_excerpt();
+												}else{
+													$content = get_the_content();
+												} ?>
+						                    <p><?php echo wp_trim_words( strip_shortcodes( $content ) , '15' ); ?></p>
+						                <?php } ?>    
 					                </div>
 				            		</li>
 				            <?php } ?>

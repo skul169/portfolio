@@ -2,9 +2,9 @@
 Contributors: 淮城一只猫
 Donate link: https://iiong.com/
 Tags: Edit,Markdown,Markdown Edit,Jetpack
-Requires at least: 3.4
-Tested up to: 4.9
-Stable tag: 3.5
+Requires at least: 3.6
+Tested up to: 4.9.4
+Stable tag: 3.6
 License: GPLv3 or later
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 
@@ -88,8 +88,14 @@ Empty content is the default highlight library, Go to [highlightjs] (https://hig
 
 == Changelog ==
 
+= 3.6 =
+
+* 兼容新版本Jetpack（新建文章出现500的错误）
+* 修复Jetpack核心问题
+
 = 3.5 =
 
+* 升级一些库文件
 * 修复一些问题
 
 = 3.4 =

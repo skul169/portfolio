@@ -55,8 +55,8 @@
         // ThemeCheck checks
         require_once dirname( __FILE__ ) . '/inc/themecheck/class.redux_themecheck.php';
 
-        // Welcome
-        require_once dirname( __FILE__ ) . '/inc/welcome/welcome.php';
+        // Welcome page removed #1526
+//        require_once dirname( __FILE__ ) . '/inc/welcome/welcome.php';
 
         /**
          * Main ReduxFramework class
@@ -3275,6 +3275,15 @@
              */
             public function generate_panel() {
                 require_once 'core/panel.php';
+                if(is_admin()){
+                    echo '<div class="a-f-wp-help"><div class="a-f-wp-help-message">
+                        <a target="_blank" href="http://ampforwp.com/support/?utm_source=options-panel&utm_medium=contact_link_btn&utm_campaign=AMP%20Plugin"> <img src="https://ampforwp.com/wp-content/uploads/2017/03/chatbox-img-1.png" /></a>
+
+                        </div>
+                        <div class="a-f-wp-help-container">
+                          <div class="a-f-wp-help-tear "><span> <i class="dashicons-sos"></i></span></div>
+                        </div></div>';
+                }
                 $panel = new reduxCorePanel ( $this );
                 $panel->init();
                 $this->set_transients();

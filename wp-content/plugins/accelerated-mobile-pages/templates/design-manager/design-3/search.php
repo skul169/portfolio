@@ -18,6 +18,7 @@
 	<?php do_action( 'amp_post_template_head', $this ); ?>
 
 	<style amp-custom>
+	<?php $this->load_parts( array( 'style' ) ); ?>
 	<?php do_action( 'amp_post_template_css', $this ); ?>
 	</style>
 </head>
@@ -55,24 +56,31 @@
 
 
      <?php global $redux_builder_amp; ?>
- 		<h1 class="amp-wp-content page-title"><?php echo ampforwp_translation( $redux_builder_amp['amp-translator-search-text'], 'You searched for:') . '  ' . get_search_query();?>  </h1>
+ 		<h1 class="amp-wp-content page-title archive-heading"><?php echo ampforwp_translation( $redux_builder_amp['amp-translator-search-text'], 'You searched for:') . '  ' . get_search_query();?>  </h1>
 
 	<?php if ( $q->have_posts() ) : while ( $q->have_posts() ) : $q->the_post();?>
 
 		<div class="amp-wp-content amp-loop-list">
 			<?php if ( ampforwp_has_post_thumbnail() ) { 
 				$thumb_url = ampforwp_get_post_thumbnail();
+				$thumb_width  	= ampforwp_get_post_thumbnail('width');
+				$thumb_height 	= ampforwp_get_post_thumbnail('height');
 				if($thumb_url){
 				?>
-					<div class="home-post_image"><a href="<?php echo ampforwp_url_controller( get_permalink() ); ?>"><amp-img layout="responsive" src=<?php echo esc_url($thumb_url); ?> width=450 height=270 ></amp-img></a></div>
+					<div class="home-post_image"><a href="<?php echo ampforwp_url_controller( get_permalink() ); ?>"><amp-img layout="responsive" src=<?php echo esc_url($thumb_url); ?> width=<?php echo $thumb_width; ?> height=<?php echo $thumb_height; ?> ></amp-img></a></div>
 				<?php } 
 				} ?>
 
 			<div class="amp-wp-post-content">
                 <ul class="amp-wp-tags">
-					<?php foreach((get_the_category()) as $category) { ?>
-             			<li class="amp-cat-<?php echo $category->term_id;?>"><?php echo $category->cat_name ?></li>
-					<?php } ?>
+					<?php foreach((get_the_category()) as $category) { 
+						if ( true == $redux_builder_amp['ampforwp-archive-support'] ) { ?>
+						<li class="amp-cat-<?php echo $category->term_id;?>"><a href="<?php echo esc_url(ampforwp_url_controller( get_category_link( $category->term_id ) )); ?>" ><?php echo $category->cat_name ?></a></li>
+					<?php }
+					else { ?>
+					   <li class="amp-cat-<?php echo $category->term_id;?>"><?php echo $category->cat_name ?></li>
+					<?php }
+					} ?> 
                 </ul>
 				<h2 class="amp-wp-title"> <a href="<?php echo ampforwp_url_controller( get_permalink() ); ?>"> <?php the_title(); ?></a></h2>
 

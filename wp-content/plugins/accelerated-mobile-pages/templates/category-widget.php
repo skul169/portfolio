@@ -50,7 +50,7 @@ class AMPFORWP_Categories_Widget extends WP_Widget {
 
     if ( $the_query->have_posts() ) {
         echo '<div class="amp-wp-content amp_cb_module amp-category-block"><ul>';
-        echo '<li class="amp_module_title">'.$ampforwp_title .'</li>';
+        echo '<li class="amp_module_title"><span>'.$ampforwp_title .'</span></li>';
         while ( $the_query->have_posts() ) {
             $the_query->the_post();
             $ampforwp_post_url = get_permalink(); ?>
@@ -201,7 +201,10 @@ class AMPFORWP_Categories_Widget extends WP_Widget {
 
 // Register the widget.
 function ampforwp_register_categories_widget() {
-  register_widget( 'AMPFORWP_Categories_Widget' );
+  global $redux_builder_amp;
+  if ( isset($redux_builder_amp['amp-design-selector']) && 4 != $redux_builder_amp['amp-design-selector'] ) {
+    register_widget( 'AMPFORWP_Categories_Widget' );
+  }
 }
 add_action( 'widgets_init', 'ampforwp_register_categories_widget' );
 

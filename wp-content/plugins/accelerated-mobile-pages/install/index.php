@@ -85,12 +85,13 @@ if(isset($redux_builder_amp['opt-media']['url']) && $redux_builder_amp['opt-medi
 											<option value="1" '.($redux_builder_amp['amp-design-selector']==1? 'selected' : '').'>Design One</option>
 											<option value="2" '.($redux_builder_amp['amp-design-selector']==2? 'selected' : '').'>Design Two</option>
 											<option value="3" '.($redux_builder_amp['amp-design-selector']==3? 'selected' : '').'>Design Three</option>
+											<option value="4" '.($redux_builder_amp['amp-design-selector']==4? 'selected' : '').'>Swift</option>
 									</select>
  
 									<div>
 									<img src="'.AMPFORWP_PLUGIN_DIR_URI.'/images/design-1.png" width="150" height="200" class="amp_install_theme_preview" id="design-1" style="'.($redux_builder_amp['amp-design-selector']==1 ? '': 'display:none' ).'">
 									<img src="'.AMPFORWP_PLUGIN_DIR_URI.'/images/design-2.png" width="150" height="200" class="amp_install_theme_preview" id="design-2" style="'.($redux_builder_amp['amp-design-selector']==2 ? '': 'display:none' ).'">
-									<img src="'.AMPFORWP_PLUGIN_DIR_URI.'/images/design-3.png" width="150" height="200" class="amp_install_theme_preview" id="design-3" style="'.($redux_builder_amp['amp-design-selector']==3 ? '': 'display:none' ).'">
+									<img src="'.AMPFORWP_PLUGIN_DIR_URI.'/images/swift.png" width="150" height="200" class="amp_install_theme_preview" id="design-3" style="'.($redux_builder_amp['amp-design-selector']==4 ? '': 'display:none' ).'">
 									</div>
  									</li>
 											   ',
@@ -114,20 +115,24 @@ if(isset($redux_builder_amp['opt-media']['url']) && $redux_builder_amp['opt-medi
 		global $ampforwp_install_config;
 		ampforwp_installer_init();
 	}
+
 	function ampforwp_installer_init(){
+		// Exit if the user does not have proper permissions
+		if(! current_user_can( 'manage_options' ) ) {
+			return ;
+		}
+		
 		global $ampforwp_install_config;
-		instller_admin_init();
+		ampforwp_instller_admin_init();
 	}
-	function instller_admin_init(){
+
+	function ampforwp_instller_admin_init(){
 		if(isset($_GET['ampforwp_install']) && $_GET['ampforwp_install']=='1' && is_admin()){
-			steps_call();
-			
+			ampforwp_steps_call();			
 		}
 	}
 	
-	
-	
-	function steps_call(){
+	function ampforwp_steps_call(){
 		global $ampforwp_install_config;
 		if ( empty( $_GET['page'] ) || $ampforwp_install_config['installerpage'] !== $_GET['page'] ) {
 			return;
@@ -169,7 +174,7 @@ if(isset($redux_builder_amp['opt-media']['url']) && $redux_builder_amp['opt-medi
 				}
 
 				if ( $show_content ) {
-					show_ampforwp_steps_body();
+					ampforwp_show_steps_body();
 				} ?>
 
 			<?php step_output_bottom_dots(); ?>
@@ -184,7 +189,7 @@ if(isset($redux_builder_amp['opt-media']['url']) && $redux_builder_amp['opt-medi
 		exit;
 	}
 	
-	function show_ampforwp_steps_body(){
+	function ampforwp_show_steps_body(){
 		global $ampforwp_install_config;
 		if($ampforwp_install_config['total_steps']==$ampforwp_install_config['current_step']['step_id']){
 			call_user_func('ampforwp_finish_page');

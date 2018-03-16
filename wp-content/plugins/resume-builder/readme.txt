@@ -1,31 +1,39 @@
 === Resume Builder ===
 Contributors: boxystudio
-Tags: resume, vcard, self promotion, skills, education, experience
-Donate link: https://www.boxystudio.com/#coffee
-Requires at least: 4.0
-Tested up to: 4.4.1
-Stable tag: 4.4.1
+Donate link: https://paypal.me/boxypayment
+Tags: resume, resumes, skills, education, experience
+Requires at least: 4.7
+Tested up to: 4.9.2
+Stable tag: 2.0.4.1
+Requires PHP: 5.6
+License: GPLv2 or later
+License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
-Build out your complete resume, contact info and skills list with this powerful plugin.
+Create one or many resumes—complete with contact information, education & experience history, as well as a list of skills—with this incredibly easy-to-use plugin!
 
 == Description ==
 
-Build out your complete resume, contact info and skills list with this powerful plugin.
+Create one or many resumes—complete with contact information, education & experience history, as well as a list of skills—with this incredibly easy-to-use plugin!
 
-**Includes the following features:**
+Be sure to check out the **[online demo](https://demos.boxystudio.com/resume-builder/)**!
 
-* Includes four great shortcodes for displaying your resume, skills and contact information in different locations.
-* Includes a widget to place one of the shortcodes so you can display your information anywhere.
-* Responsive and should work perfectly with most themes.
-* Single post template and stylesheet are both over-writeable by the theme (see FAQs).
+= A quick overview video: =
+[vimeo https://vimeo.com/253266073]
 
-**Here's a demo URL to view the results of the Resume Builder:**
+= Quality design & usability =
 
-[http://resume-builder.boxydemos.com](http://resume-builder.boxydemos.com)
+Using the drag & drop resume builder, you can create your resume quickly and without limitations. Add contact information, education, experience, skills and more.
 
-**Check out the video below for a full walkthrough (on a custom theme called SELF):**
+= Many premium features included =
 
-[youtube http://www.youtube.com/watch?v=rblid85NhI0]
+* A super-intuitive resume builder with drag & drop capabilities.
+* A beautiful default resume template.
+* The ability to show specific parts of your resume with shortcode options.
+* Contact Information
+* Experience & Education
+* Skills
+* Very developer-friendly with loads of hooks & filters.
+* And more to come...
 
 == Installation ==
 
@@ -37,24 +45,54 @@ Build out your complete resume, contact info and skills list with this powerful 
 
 == Frequently Asked Questions ==
 
-= How can I customize the styling to match my theme? =
-
-Copy the contents of the `/css/resume-builder-styles.css` into a new file called `resume-builder.css`. Put this new file into the root of your theme's folder. Then you can go ahead and make your changes as you see fit.
-
-= How can I customize the post template that displays the resume? =
-
-Copy the `single-resume.php` file into the root of your theme's folder. Then you can make the changes to that file to match your theme.
-
 = How can I add more than one resume sidebar? =
 
 Use a plugin like [Custom Sidebars](https://wordpress.org/plugins/custom-sidebars/) to create sidebars for additional resumes.
 
 == Screenshots ==
 
-1. Here's what the Resume Builder looks like in the admin.
-2. Here's what a final resume would look like.
+1. Resume Builder in action on the admin side of things.
+2. The default resume template (use the shortcode to control output).
+
+== Upgrade Notice ==
+
+= 2.0.4.1 =
+Fixed an issue with featured images being hidden everywhere.
 
 == Changelog ==
+
+= 2.0.4.1 =
+* **FIX:** Fixed an issue with featured images being hidden everywhere (not just on the resume posts).
+
+= 2.0.4 =
+* **NEW:** Now includes full text editors for experience & education descriptions.
+
+= 2.0.3 =
+* **NEW:** The Resume post layout is now a two-third/one-third column split. "Intro" and "History" on the left, "Skills" on the right. More options for this coming soon.
+* **NEW:** Added a setting to fix "tiny fonts" for themes that don't include a default font size at the "html" level (you'll know if you have this issue because your resume fonts look too small).
+* **TWEAK:** Authors and Editors can now create and manage resumes.
+* **TWEAK:** Fixed some font color issues for resumes on dark backgrounds.
+
+= 2.0.2 =
+* **TWEAK:** Switched FontAwesome5 from SVG to the more supported Webfonts option. This should help prevent conflicts with other plugins/themes.
+* **TWEAK:** Now loading minified versions of all CSS/JS files for improved performance.
+* **TWEAK:** Removed files that were no longer needed.
+
+= 2.0.1 =
+* **NEW:** Added responsive CSS for mobile-friendly layouts.
+* **FIX:** Fixed an issue with the widget's picker resume dropdown.
+
+= 2.0 =
+* **NEW:** **Entirely new plugin, coded from the ground up.**
+* **NEW:** Complete backwards compatibility with the previous version.
+* **NEW:** A brand new resume builder.
+* **NEW:** A new and improved resume template.
+* **NEW:** A new Settings page to customize the colors. More settings to come soon!
+* **NEW:** A new resume shortcode with options to choose what you want to display.
+* **NEW:** A new resume widget with options to choose what you want to display.
+* **TWEAK:** Works perfectly with the latest version of WordPress. (4.9.2+)
+* **TWEAK:** Lots of developer hooks and filters to play with if you're into that sort of thing.
+* **FIX:** Bugs from the previous version? **Squashed.**
 
 = 1.1.94 =
 * Updated FontAwesome to 4.5.0.
@@ -100,9 +138,3 @@ Use a plugin like [Custom Sidebars](https://wordpress.org/plugins/custom-sidebar
 
 = 1.0 =
 * Initial release
-
-== Upgrade Notice ==
-
-= 1.1.94 =
-* Updated FontAwesome to 4.5.0.
-* Only loads TinyMCE on Resume Edit screens now (instead of everywhere).

@@ -2,9 +2,9 @@
 Contributors: chriscct7, smub
 Donate link: http://www.wpbeginner.com/wpbeginner-needs-your-help/
 Tags: analytics, analytics dashboard, google analytics, google analytics dashboard, google analytics widget, universal google analytics, statistics, tracking, stats, google, yoast, google analytics by yoast, ga, monster insights, monsterinsights, universal analytics, web stats, ecommerce, ecommerce tracking
-Requires at least: 3.9
-Tested up to: 4.9.0
-Stable tag: 6.2.6
+Requires at least: 3.8.0
+Tested up to: 4.9
+Stable tag: 7.0.4
 License: GPL v3
 
 The best Google Analytics plugin for WordPress. See how visitors find and use your website, so you can keep them coming back.
@@ -119,8 +119,6 @@ This plugin is created by <a href="https://twitter.com/chriscct7" rel="friend" t
 If you like this plugin, then consider checking out our other projects:
 
 * <a href="http://optinmonster.com/" rel="friend" title="OptinMonster">OptinMonster</a> - Get More Email Subscribers
-* <a href="http://soliloquywp.com/" rel="friend" title="Soliloquy">Soliloquy</a> - Best WordPress Slider Plugin
-* <a href="http://enviragallery.com/" rel="friend" title="Envira Gallery">Envira Gallery</a> - Best WordPress Gallery Plugin
 * <a href="https://wpforms.com/" rel="friend" title="WPForms">WPForms</a> - Best WordPress Contact Form Plugin
 
 This plugin would not be possible without the help and support of <a href="http://www.wpbeginner.com/" rel="friend" title="WPBeginner">WPBeginner</a>, the largest WordPress resource site. You can learn from our <a href="http://www.wpbeginner.com/category/wp-tutorials/" rel="friend" title="WordPress Tutorials">free WordPress Tutorials</a> like <a href="http://www.wpbeginner.com/how-to-install-wordpress/" rel="friend" title="How to Install WordPress - Step by Step">how to install WordPress</a>, <a href="http://www.wpbeginner.com/wordpress-hosting/" rel="friend" title="How to choose the best WordPress hosting">choose the best WordPress hosting</a>, <a href="http://www.wpbeginner.com/glossary/" rel="friend" title="WordPress Glossary Terms for Beginners">WordPress glossary</a>, and more.
@@ -136,10 +134,67 @@ You can also learn about other <a href="http://www.wpbeginner.com/category/plugi
 4. Want more features? <a href="https://www.monsterinsights.com/?utm_source=wprepo&utm_medium=link&utm_campaign=liteversion">Purchase MonsterInsights Pro</a>!
 
 == Changelog ==
+= 7.0.4: March 7, 2018 =
+- New: We've added links to the pages listed in the top pages part of the Overview report to make it easier to see which page each title belongs to.
+- New: We've added the UA code to the account selector to make it easier to determine which property to use.
+- New: Better compatibility with IE11.
+- New: The links to view more reporting data now default to the currently selected daterange when you go to analytics.google.com
+- Bugfix: We've corrected some missing closing li tags on the overview report.
+- Bugfix: We fixed an issue where get_current_screen might be undefined on some pages.
+- Bugfix: We fixed an issue where some improperly configured servers might resolve symlinks that are not supposed to be resolved, leading to issues with loading asset files MonsterInsights uses.
+
+= 7.0.3: February 28, 2018 =
+- New: We added support for tracking download files that have a cache busting variable on the URL.
+- New: We added support for the new UserID mode used in our AMP addon.
+- Tweak: We fixed a bug with the notices class, and drastically cut back on the number of them.
+- Bugfix: We fixed a bug with our Facebook Instant Articles addon that prevented some users from being tracked for downloads.
+- Bugfix: We fixed a bug in the usage tracking for some types of installs.
+- Bugfix: We've allowed the disabling of tracking for admininistrator role users on single sites.
+
+= 7.0.2: February 27, 2018 =
+- Bugfix: Fixed a bug with the analytics.js output where a UA code wasn't entered, the $reason variable could be undefined.
+- Bugfix: Fixed an issue where a notice might not be dismissable and we've also removed several of them.
+
+= 7.0.1: February 26, 2018 =
+- New: Support for the updated version of MonsterInsights AMP plugin which switches from using a custom REST endpoint to using the now built in Google AMP ClientID synching feature. If you're using the AMP addon, you'll want to also update that addon as well.
+- New: The __gaTracker and disable tracking functions will always be defined, even when we're not tracking users (for example if viewing a preview, or if a logged-in administrator) to allow sites to not have to worry about breakage when variable exist checking isn't done. 
+- New: We now output a notice in the console and output the GA code (though do not run it) when we're not tracking someone. This makes it easier to verify the Google code is indeed outputting, and also makes it more clear as to why a particular user isn't being tracked. Note, when testing Google Analytics code, always do it logged out, ideally in the private browsing/incognito mode of your web browser. We're going to keep working on improving the frontend system to simplify it and add new features for both Lite and Pro users now that we've jettisoned ga.js support in MonsterInsights 7.0. You'll see updates through the year that add new tracking features, particularly ones that we're tweaking in order to expand and refine our built-in reporting.
+- New: We added a "have a MonsterInsights license" link on the settings panel, to make it clearer the procedure for the quick and easy upgrade from MonsterInsights Lite to MonsterInsights Pro.
+- Tweak: We removed the phrase referencing the dashboard (removed in MonsterInsights 7.0) from the permissions settings.
+- Bugfix: Due to us forgetting to include our jQuery shim for disable() in the Lite, some users were unable to use the 10/25/50 expand feature on the reports page.
+- Bugfix: An accidental use of the PHP function date instead of the one called time meant that some users were unable to see updated reporting data each day in the Lite version.
+- Bugfix: In sitei() in the api-auth class, we used mb_strimwidth to trim the final string to 30 characters. While this is a great PHP function, not all servers have the mbstring (Multibyte String) PHP extension installed, from which all mb_* functions are provided, despite it being a "required" PHP extension to use WordPress core. This caused some servers to be unable to authenticate and thus get our amazing new reports (sad face). This usage has been replaced with a standard substr use, thus allowing for compatibility with all servers.
+
+= 7.0.0: February 20, 2018 =
+* New: Completely revamped reports with a new UI.
+* New: Ability to oAuth at the network level, and have that oAuth apply as the default to all subsites (can still override at a subsite level).
+* New: Ability to enter a license key at the network level, and have that oAuth apply as the default to all subsites (can still override at a subsite level).
+* New: Completely new oAuth flow, that handles more errors and allows for future growth. Importantly, your existing sites will continue to track (the UA code is manually moved in the upgrade process), but you will need to re-authenticate (a quicker, and even easier process in 7.0) to enable our all new reporting area. New permissions requested to allow for significantly expanded reporting (and some upcoming reports).
+* New: Ability to see the site traffic graphs in both pageviews and sessions.
+* New: You can now choose between Last 30 days, Last 7 days, or any date range of your choosing if you're a paid MonsterInsights user!
+* New: Compare site traffic to the previous period.
+* New: Completely revamped overview report. You'll find lots of new data has been added. Also, all of that data changes as you use change the date ranges (a Pro exclusive feature).
+* New: A brand new eCommerce report for Pro users
+* New: A brand new Search Console/Queries report for paid MonsterInsights users. This allows you to see which terms you are ranking for on Google and how Google searches are driving your site traffic, along with clickthrough rates.
+* New: A brand new Publishers report for Plus level users allowing you to see breakdown of important site metrics.
+* New: A lot of behind the scenes work enabling more reports to be added in the future. Stay on the lookout as we start significantly expanding the breadth and depth of reporting this year.
+* New: A revised general settings panel which is significantly faster to load.
+* New: Significant performance improvements. We completely top-to-bottom audited MonsterInsights. It's now 286% faster in the admin and 161% faster in the frontend.
+* New: Completely new internal notification handling has been implemented. This should make it clearer if you need to address anything, and if so make it less tedious to figure out exactly what.
+* Tweak: We've changed the verbage for what users see if they are logged in as a site administrator on the frontend to make it more clear MonsterInsights doesn't track site administrators to prevent them from skewing their own Google Analytics data (particularly demographics data) and to encourage them to use the Incognito Mode/Private browsing mode of their web browser (or log out) if they want to view the Google Analytics code.
+* Tweak: The URL used for the measurement protocol calls has been updated per Google guidance.
+* Tweak: We've discovered some strings that weren't translatable, and fixed that.
+* Tweak: Based on your feedback, we've clarified the titles and descriptions used in some of the settings to make it more clear as to what they do.
+* Tweak: When first adding a license key, in rare cases sometimes the addons permissions didn't sync. While extremely rare, and while MonsterInsights would automatically fix itself within 6 hours, we've added a system that eliminates this from happening, and made sure that there's also a way to fix this manually if this need arises.
+* Tweak: The countries map has been changed to a countries list (sorted). This means we can remove jVectorMap which had some issues in mapping, and also make it easier for you to see your top countries data.
+* Removed: Support for the long deprecated ga.js tracking has been removed. We've had dismissable (and then later non-dismissable) persistent admin notices for over a year now, and it's time to remove support for these finally. Analytics.js tracking is far more accurate than ga.js tracking. Users of ga.js were not able to take advantage of new MonsterInsights features and Google Analytics features that relied on analytics.js, including our out-of-the-box Javascript based events tracking system, and many other features (like enhanced eCommerce tracking in our eCommerce addon). Google themselves deprecated ga.js over 5 years ago. On update, we'll automatically move those using ga.js to analytics.js. This switch requires no changes on behalf of the site owner.
+* Removed: Support for the long deprecated PHP events tracking has been removed. We've had dismissable (and then later non-dismissable) persistent admin notices for over a year now offering a 1 click update. The PHP events tracking, a stayover from the Yoast years, caused a lot of issues and couldn't track everything on a page. It could only track things in specific WordPress areas like the_content and widgets, but couldn't track anything outside of that, or things that were added to the DOM after WordPress rendered the page. Our JS events tracking system can track all-the-things on all parts of a page, and is far more accurate and easier for us to maintain. Maintaining a gigantic PHP regex-based system took a lot of our development time up, and based on our opt-in tracking data, almost no one uses it anymore (which is good, because JS tracking is so much better). Users still using it will be automatically switched to JS events tracking on update (which requires no changes to switch to using it).
+* Removed: Many deprecated filters from the Yoast era have been removed. After maintaining backwards compatibility for over a year now, and also issuing a notice every time those deprecated filters were used, it's time to pull the plug on these to allow our tracking system to be able to be simplified in the future. We have a complete document in our documentation for the 6.0 release that details exactly how to update for each of these filters.
+
 = 6.2.6: November 17, 2017 =
 * Tweak: Compatibility with WordPress 4.9.
 
-= 6.2.5: Not issued =
+= 6.2.5: NOT ISSUED =
 * Skipped release version.
 
 = 6.2.4: October 6, 2017 =
@@ -361,6 +416,10 @@ You can also learn about other <a href="http://www.wpbeginner.com/category/plugi
 
 == Upgrade Notice ==
 
+= 7.0.0 = 
+
+This is a major release. Please back up your site before upgrading.
+
 = 6.0.0 = 
 
 This is a major release. Please back up your site before upgrading.
@@ -371,8 +430,14 @@ For all frequently asked questions, and their answers, check the [MonsterInsight
 
 == Screenshots ==
 
-1. Reporting area
-2. Google Authentication wizard
-3. Settings page
-4. Custom Dimensions (a Pro feature)
-5. eCommerce Tracking (a Pro feature)
+1. The overview report
+2. Top countries and referrals
+3. Top posts and pages
+4. Authentication with MonsterInsights
+5. Settings page
+6. File download tracking
+7. eCommerce tracking - no configuration required (Pro feature)
+8. eCommerce report (Pro feature)
+9. Search console report (Pro feature)
+10. Custom dimensions tracking (Pro feature)
+11. Custom Dimensions report (Pro feature)
